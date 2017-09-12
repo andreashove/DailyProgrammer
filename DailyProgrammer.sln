@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "239-aGameOfThrees", "239-aGameOfThrees\239-aGameOfThrees.csproj", "{8ADEB955-BD85-470F-B14F-B95F24D2A275}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "321-talkingClock", "321-talkingClock\321-talkingClock.csproj", "{147BF192-F1D3-4FD8-859F-90A13434EDC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8ADEB955-BD85-470F-B14F-B95F24D2A275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8ADEB955-BD85-470F-B14F-B95F24D2A275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8ADEB955-BD85-470F-B14F-B95F24D2A275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{147BF192-F1D3-4FD8-859F-90A13434EDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{147BF192-F1D3-4FD8-859F-90A13434EDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{147BF192-F1D3-4FD8-859F-90A13434EDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{147BF192-F1D3-4FD8-859F-90A13434EDC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

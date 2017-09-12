@@ -7,7 +7,7 @@
     <ProjectGuid>{147BF192-F1D3-4FD8-859F-90A13434EDC0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_321_talkingClock</RootNamespace>
-    <AssemblyName>_321_talkingClock</AssemblyName>
+    <AssemblyName>321-talkingClock</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
