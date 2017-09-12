@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "239-aGameOfThrees", "239-aG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "321-talkingClock", "321-talkingClock\321-talkingClock.csproj", "{147BF192-F1D3-4FD8-859F-90A13434EDC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "239-Tests", "239-Tests\239-Tests.csproj", "{C4C717CD-9AE5-431B-A254-895A8070D39E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{147BF192-F1D3-4FD8-859F-90A13434EDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{147BF192-F1D3-4FD8-859F-90A13434EDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{147BF192-F1D3-4FD8-859F-90A13434EDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4C717CD-9AE5-431B-A254-895A8070D39E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4C717CD-9AE5-431B-A254-895A8070D39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4C717CD-9AE5-431B-A254-895A8070D39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4C717CD-9AE5-431B-A254-895A8070D39E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
