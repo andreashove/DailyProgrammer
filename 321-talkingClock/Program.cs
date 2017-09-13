@@ -55,8 +55,6 @@ namespace _321_talkingClock
 
             bool _notDone = true;
 
-            //var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-            //var hours = new Dictionary<string, string>();
 
             while (_notDone)
             {
@@ -71,7 +69,11 @@ namespace _321_talkingClock
                 Console.Write("Input a time (hh:mm) or hit Enter to get current time: ");
                 _inputTimestamp = Console.ReadLine();
 
-                if (_inputTimestamp.Length != 5 || _inputTimestamp[2] != ':')
+                if (_inputTimestamp == "")
+                {
+                    _inputTimestamp = DateTime.Now.Hour.ToString("00.##")+":"+DateTime.Now.Minute.ToString("00.##");
+                }
+                else if (_inputTimestamp.Length != 5 || _inputTimestamp[2] != ':')
                 {
                     Console.WriteLine("Error: \"" + _inputTimestamp + "\" is not in the valid format \"hh:mm\"");
                     continue;
@@ -128,6 +130,7 @@ namespace _321_talkingClock
         {
             using (StreamReader r = new StreamReader(Directory.GetCurrentDirectory() + @"/config.json"))
             {
+                
                 string json = r.ReadToEnd();
                 return JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
             }
