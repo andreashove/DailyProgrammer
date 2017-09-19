@@ -1,0 +1,7 @@
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\MVC_console\bin\Release\MVC_console.exe.config
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\MVC_console\bin\Release\MVC_console.exe
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\MVC_console\bin\Release\MVC_console.pdb
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\MVC_console\obj\Release\321-talkingClockMVC.csprojResolveAssemblyReference.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\MVC_console\obj\Release\321-talkingClockMVC.csproj.CoreCompileInputs.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\MVC_console\obj\Release\MVC_console.exe
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\MVC_console\obj\Release\MVC_console.pdb

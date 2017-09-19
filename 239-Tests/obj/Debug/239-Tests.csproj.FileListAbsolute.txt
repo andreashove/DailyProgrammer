@@ -1,0 +1,16 @@
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\239-Tests.dll
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\239-Tests.pdb
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\239-aGameOfThrees.exe
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\239-aGameOfThrees.pdb
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\239-aGameOfThrees.exe.config
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\obj\Debug\239-Tests.csprojResolveAssemblyReference.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\obj\Debug\239-Tests.csproj.CoreCompileInputs.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\obj\Debug\239-Tests.dll
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\239-Tests\obj\Debug\239-Tests.pdb

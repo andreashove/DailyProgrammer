@@ -1,0 +1,7 @@
+C:\Users\anhove\Documents\GitHub\csharpfundamentals\MVC_console\bin\Debug\MVC_console.exe.config
+C:\Users\anhove\Documents\GitHub\csharpfundamentals\MVC_console\bin\Debug\MVC_console.exe
+C:\Users\anhove\Documents\GitHub\csharpfundamentals\MVC_console\bin\Debug\MVC_console.pdb
+C:\Users\anhove\Documents\GitHub\csharpfundamentals\MVC_console\obj\Debug\MVC_console.csproj.CoreCompileInputs.cache
+C:\Users\anhove\Documents\GitHub\csharpfundamentals\MVC_console\obj\Debug\MVC_console.exe
+C:\Users\anhove\Documents\GitHub\csharpfundamentals\MVC_console\obj\Debug\MVC_console.pdb
+C:\Users\anhove\Documents\GitHub\csharpfundamentals\MVC_console\obj\Debug\MVC_console.csprojResolveAssemblyReference.cache

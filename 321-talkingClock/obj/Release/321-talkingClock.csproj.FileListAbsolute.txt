@@ -1,0 +1,5 @@
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Release\321-talkingClock.csprojResolveAssemblyReference.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Release\321-talkingClock.g.resources
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Release\_321_talkingClock.Properties.Resources.resources
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Release\321-talkingClock.csproj.GenerateResource.Cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Release\321-talkingClock.csproj.CoreCompileInputs.cache

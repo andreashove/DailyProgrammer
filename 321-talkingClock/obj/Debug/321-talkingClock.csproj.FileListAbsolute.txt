@@ -1,0 +1,12 @@
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\bin\Debug\321-talkingClock.exe.config
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\bin\Debug\321-talkingClock.exe
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\bin\Debug\321-talkingClock.pdb
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\bin\Debug\Newtonsoft.Json.dll
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\bin\Debug\Newtonsoft.Json.xml
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Debug\321-talkingClock.csprojResolveAssemblyReference.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Debug\321-talkingClock.csproj.CoreCompileInputs.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Debug\321-talkingClock.exe
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Debug\321-talkingClock.pdb
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Debug\321-talkingClock.g.resources
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Debug\_321_talkingClock.Properties.Resources.resources
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\321-talkingClock\obj\Debug\321-talkingClock.csproj.GenerateResource.Cache
