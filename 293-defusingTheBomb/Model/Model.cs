@@ -13,11 +13,18 @@ namespace _293_defusingTheBomb
         private List<string> wires;
         private int[] wireState = { 0, 0, 0, 0, 0, 0 };
         private string[] wireStateString = { "", "", " (REQUIRED)", " (ONE REQUIRED)", "", " (CUTTED)", "", "", "", " (BLOCKED)" };
-        
-        
-        private List<int> obligatoryWires;
+
         
         private int triggerWire;
+        public int Triggerwire
+        {
+            get
+            {
+                return triggerWire;
+            }
+            
+        }
+
         private bool difficulty = false;
 
         const int UNMODIFIED = 0;
@@ -53,10 +60,7 @@ namespace _293_defusingTheBomb
             wireState = new int[] { 0, 0, 0, 0, 0, 0 };
         }
 
-        public int GetTriggerwire()
-        {
-            return triggerWire;
-        }
+        
 
         public string CutWire(int wire)
         {
@@ -78,8 +82,8 @@ namespace _293_defusingTheBomb
 
             wireState[wire] = CUTTED;
 
-            if (GameIsWon())
-                return "won";
+            //if (GameIsWon())
+             //   return "won";
 
 
             return "";
@@ -103,7 +107,7 @@ namespace _293_defusingTheBomb
             
         }
 
-        private bool GameIsWon()
+        public bool GameIsWon()
         {
             int i = -1;
             foreach(int wirestate in wireState)

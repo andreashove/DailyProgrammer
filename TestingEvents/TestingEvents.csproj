@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E354992-0FA7-493C-9B7F-4F8DEF88DC10}</ProjectGuid>
+    <ProjectGuid>{A0ECF059-D0D7-447C-989A-68F0DE5D9BE4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_293_defusingTheBomb</RootNamespace>
-    <AssemblyName>293-defusingTheBomb</AssemblyName>
+    <RootNamespace>TestingEvents</RootNamespace>
+    <AssemblyName>TestingEvents</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,27 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Controller.cs" />
-    <Compile Include="Controller\IController.cs" />
-    <Compile Include="Controller\Countdown.cs" />
-    <Compile Include="Model\Cable.cs" />
-    <Compile Include="Model\IModel.cs" />
-    <Compile Include="Model\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\IView.cs" />
-    <Compile Include="View\View.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="disarmed.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="explosion.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

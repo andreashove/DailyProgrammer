@@ -1,0 +1,6 @@
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\TestingEvents\bin\Debug\TestingEvents.exe.config
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\TestingEvents\bin\Debug\TestingEvents.exe
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\TestingEvents\bin\Debug\TestingEvents.pdb
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\TestingEvents\obj\Debug\TestingEvents.csproj.CoreCompileInputs.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\TestingEvents\obj\Debug\TestingEvents.exe
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\TestingEvents\obj\Debug\TestingEvents.pdb

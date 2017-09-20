@@ -5,3 +5,5 @@ C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\2
 C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\293-defusingTheBomb.exe
 C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\293-defusingTheBomb.pdb
 C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\293-defusingTheBomb.csprojResolveAssemblyReference.cache
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\explosion.wav
+C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\disarmed.wav

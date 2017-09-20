@@ -6,6 +6,6 @@
         string CutWire(int i);
         void InitializeWires();
         void UpdateDifficultySetting(bool diff);
-        int GetTriggerwire();
+        bool GameIsWon();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Threading;
 
 namespace _293_defusingTheBomb
@@ -7,54 +8,92 @@ namespace _293_defusingTheBomb
     {
         IView view;
         IModel model;
+        Countdown countdownTimer;
+
         private int EXPLOSION = 3;
         private int VICTORY = 4;
         const string EMPTY = "";
-        private bool DIFFICULT;
+        private bool difficulty;
 
         public Controller()
         {
             view = new View();
             model = new Model();
+            countdownTimer = new Countdown();
+
+            countdownTimer.BombTimerRanOut += HandleTimerRanOut;
+
             
+        }
+
+        private void HandleTimerRanOut(object sender, EventArgs e)
+        {
+            if (model.GameIsWon())
+            {
+                view.ClearConsole();
+                GameStartup();
+                
+                view.WriteToUser(VICTORY);
+                countdownTimer.PlayDisarmAndStopThread();
+
+            }
+            else
+            {
+                view.WriteToUser(EXPLOSION);
+                countdownTimer.PlayExplosionAndStopThread();
+            }
+            
+            InitializeGame();
+        }
+
+        private void InitializeGame()
+        {
+            model.InitializeWires();
+            view.WriteToUser("Play again?");
+
+            view.GetUserInput();
+
+            countdownTimer = new Countdown();
+            countdownTimer.BombTimerRanOut += HandleTimerRanOut;
+            countdownTimer.StartThread();
         }
 
         public void Start()
         {
-            StartCountdown();
+            PromptUserToChooseDifficulty();
+            countdownTimer.StartThread();
 
-            string reply;
-
-            view.WriteToUser("Difficult mode? (y/n)");
-            reply = view.GetUserInput();
-            DIFFICULT = reply == "y" ? true : false;
-
-            model.UpdateDifficultySetting(DIFFICULT);
-            view.ClearConsole();
+            
 
             
             int wireToCut;
             string wireCutResponse = EMPTY;
+            string reply;
 
             while (true)
             {
-                
-                view.WriteHeaderAndRulesToUser();
-                
-                view.WriteToUser(model.GetWires());
-                
+                GameStartup();
 
                 if (wireCutResponse != EMPTY)
                 {
                     if (wireCutResponse == "won")
-                    
+                    {
                         view.WriteToUser(VICTORY);
+                        countdownTimer.PlayDisarmAndStopThread();
+                    }
+
 
                     else if (wireCutResponse == "boom")
-                    
+                    {
+                        countdownTimer.Interval = 15;
+                        countdownTimer.PlayExplosionAndStopThread();
                         view.WriteToUser(EXPLOSION);
 
-                        
+                    }
+
+
+
+
 
 
                     model.InitializeWires();
@@ -62,7 +101,9 @@ namespace _293_defusingTheBomb
 
                     view.GetUserInput();
                     wireCutResponse = EMPTY;
-                    //StartCountdown();
+                    countdownTimer = new Countdown();
+                    countdownTimer.BombTimerRanOut += HandleTimerRanOut;
+                    countdownTimer.StartThread();
                     continue;
                 }
 
@@ -70,16 +111,19 @@ namespace _293_defusingTheBomb
 
                 try
                 {
+                    if (String.IsNullOrEmpty(reply))
+                        continue;
                     wireToCut = int.Parse(reply);
                     wireToCut--; // due to 0 indexing
                     if (wireToCut < 0 || wireToCut > 5)
                         continue;
 
                     wireCutResponse = model.CutWire(wireToCut);
-                    
-                     
-                    
-     
+                    countdownTimer.Interval -= countdownTimer.Interval / 10;
+
+
+
+
                 }
                 catch (FormatException)
                 {
@@ -88,41 +132,25 @@ namespace _293_defusingTheBomb
 
                 view.ClearConsole();
             }
-            
+
         }
 
-        private void StartCountdown()
+        private void PromptUserToChooseDifficulty()
         {
-            Thread beepThread = new Thread(new ThreadStart(PlayBeep));
-            beepThread.IsBackground = true;
-            beepThread.Start();
+            view.WriteToUser("Difficult mode? (y/n)");
 
+            string reply = view.GetUserInput();
+            difficulty = reply == "y" ? true : false;
 
-            
+            model.UpdateDifficultySetting(difficulty);
+            view.ClearConsole();
         }
 
-        private void PlayBeep()
+        private void GameStartup()
         {
-            int i = 0;
-            int freq = 2000;
-            int interval = 500;
-            while (true)
-            {
-                if (i % 10 == 0)
-                    interval = interval / 2;
-                if (interval == 125)
-                {
-                    view.WriteToUser(EXPLOSION);
-                    model.InitializeWires();
-                    view.WriteToUser("Play again?");
-
-                    view.GetUserInput();
-                    interval = 500;
-                }
-                Console.Beep(freq, interval);
-                Thread.Sleep(interval);
-                i++;
-            }
+            view.WriteHeaderAndRulesToUser();
+            view.WriteToUser(model.GetWires());
         }
+
     }
 }
