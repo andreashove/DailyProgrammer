@@ -45,6 +45,7 @@
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\IController.cs" />
     <Compile Include="Controller\Countdown.cs" />
+    <Compile Include="Controller\Sounds.cs" />
     <Compile Include="Model\Cable.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Model\Model.cs" />

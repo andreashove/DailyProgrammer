@@ -6,6 +6,7 @@
         void WriteHeaderAndRulesToUser();
         void WriteToUser(int i);
         void ClearConsole();
+        int GetValidatedUserInput();
         string GetUserInput();
 
     }

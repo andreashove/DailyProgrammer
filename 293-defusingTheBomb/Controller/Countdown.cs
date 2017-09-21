@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Media;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace _293_defusingTheBomb
 {
@@ -45,9 +39,6 @@ namespace _293_defusingTheBomb
             Explosion(this, null);
         }
 
-        
-        
-
         public Countdown()
         {
             thread = new Thread(new ThreadStart(PlayBeep));
@@ -57,43 +48,11 @@ namespace _293_defusingTheBomb
 
         public void StartThread()
         {
+            
             thread.Start();
         }
-
         
-
-        private void PlayExplosion()
-        {
-            using (SoundPlayer player = new SoundPlayer())
-            {
-                player.SoundLocation = "explosion.wav";
-                player.Play();
-            }
-               
-        }
-
-        private void PlayDisarmed()
-        {
-            using (SoundPlayer player = new SoundPlayer())
-            {
-                player.SoundLocation = "disarmed.wav";
-                player.Play();
-            }
-        } 
-
-        public void PlayDisarmAndStopThread()
-        {
-            PlayDisarmed();
-            StopThread();
-            
-        }
-
-        public void PlayExplosionAndStopThread()
-        {
-            PlayExplosion();
-            StopThread();
-        }
-        private void StopThread()
+        public void StopThread()
         {
             thread.Abort();
         }
@@ -126,14 +85,7 @@ namespace _293_defusingTheBomb
                 {
                     InitializeBoom();
                     return;
-                    //Explosion(this, null);
-                    //Console.WriteLine("Now it should be boom boom time");
-                    /*view.WriteToUser(EXPLOSION);
-                    model.InitializeWires();
-                    view.WriteToUser("Play again?");
-
-                    view.GetUserInput();
-                    interval = 500;*/
+                    
                 }
                 Console.Beep(freq, interval);
                 Thread.Sleep(interval);

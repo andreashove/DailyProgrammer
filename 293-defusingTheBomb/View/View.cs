@@ -36,21 +36,35 @@ namespace _293_defusingTheBomb
 
         const int RULES = 0;
         const int WHICH_WIRE_TO_CUT = 1;
-        
-
-        List<string> userPrompts;
-
-        public View()
-        {
-            userPrompts = new List<string>()
-            {
-                @"If you cut a:  
+        /*
+        @"If you cut a:  
                 - white cable you can't cut (white) or black cable.
                 - red cable you have to cut a green one.
                 - black cable it is not allowed to cut a white, green or orange one.
                 - orange cable you should cut a red or black one.     
                 - green cable you have to cut a orange or white one.
                 - purple cable you can't cut a (purple), green, orange or white cable",
+        */
+        List<string> userPrompts;
+
+        public View()
+        {
+            userPrompts = new List<string>()
+            {
+                @"
+                +---------+------------------------+-----------------+
+                | If  cut |       Can't cut        |    Must cut     |
+                +---------+------------------------+-----------------+
+                | white   | black                  |                 |
+                | red     |                        | green           |
+                | black   | white, green or orange |                 |
+                | orange  |                        | red or black    |
+                | green   |                        | orange or white |
+                | purple  | green, orange or white |                 |
+                +---------+------------------------+-----------------+
+",
+
+                
                 "Bomb go boom, unless you cut the correct wires.",
                 "Which wire would you like to cut?",
                 "\n\n\n************************\n********       *********\n******** BOOM! *********\n********       *********\n************************\n\n\n",
@@ -94,10 +108,40 @@ namespace _293_defusingTheBomb
                 Console.WriteLine(disarmed);
         }
 
-
         public string GetUserInput()
         {
             return Console.ReadLine();
+        }
+
+        public int GetValidatedUserInput()
+        {
+            var inputValid = false;
+            var input = "";
+            var intInput = -1;
+
+            while (!inputValid)
+            {
+                input = Console.ReadLine();
+
+                try
+                {
+                    if (String.IsNullOrEmpty(input))
+                        continue;
+                    intInput = int.Parse(input);
+                    intInput--; // due to 0 indexing
+                    if (intInput < 0 || intInput > 5)
+                        continue;
+
+                    inputValid = true;
+
+                }
+                catch (FormatException)
+                {
+                    continue;
+                }
+            }
+
+            return intInput;
         }
     }
 }

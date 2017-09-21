@@ -13,8 +13,9 @@ namespace _293_defusingTheBomb
         private List<string> wires;
         private int[] wireState = { 0, 0, 0, 0, 0, 0 };
         private string[] wireStateString = { "", "", " (REQUIRED)", " (ONE REQUIRED)", "", " (CUTTED)", "", "", "", " (BLOCKED)" };
+        //private string[] wireStateString = { "", "", "", "", "", " (CUTTED)", "", "", "", "" };
 
-        
+
         private int triggerWire;
         public int Triggerwire
         {
@@ -91,18 +92,18 @@ namespace _293_defusingTheBomb
 
         private void CheckIfWireWasRequired(int wire)
         {
-            int c = 0;
-            if (wire == WHITE || wire == ORANGE)
-            {
-                foreach (int wirestate in wireState)
-                {
-                    if (wirestate == REQUIRED_OR)
-                    {
-                        wireState[c] = UNMODIFIED;
-                    }
-                    c++;
+            //int c = 0;
 
+            if (wireState[WHITE] == REQUIRED_OR && wireState[ORANGE] == REQUIRED_OR)
+            {
+                wireState[WHITE] = UNMODIFIED;
+                wireState[ORANGE] = UNMODIFIED;
             }
+
+            if (wireState[RED] == REQUIRED_OR && wireState[BLACK] == REQUIRED_OR)
+            {
+                wireState[RED] = UNMODIFIED;
+                wireState[BLACK] = UNMODIFIED;
             }
             
         }
@@ -120,7 +121,7 @@ namespace _293_defusingTheBomb
                 }
                     
 
-                if (wirestate == 0)
+                if (wirestate == UNMODIFIED)
                 {
                     return false;
                 }
@@ -165,6 +166,11 @@ namespace _293_defusingTheBomb
                     break;
 
                 case ORANGE:
+                    if(wireState[RED] == UNMODIFIED && wireState[BLACK] == UNMODIFIED)
+                    {
+                        wireState[RED] = REQUIRED_OR;
+                        wireState[BLACK] = REQUIRED_OR;
+                    }
                     break;
 
                 default:
@@ -207,15 +213,7 @@ namespace _293_defusingTheBomb
             foreach (string wire in wires)
             {
                 result += (i + 1) + " " + wire + WireStateToString(i);
-                if (i == triggerWire)
-                { 
-                    if (GameIsWon())
-                    {
-                        result += " (TRIGGER WIRE)";
-                    }
-                    
-
-                }
+                
                 
                         
                 result += "\n";
@@ -225,10 +223,32 @@ namespace _293_defusingTheBomb
             return result;
         }
 
-        private void Explode()
+        public string GetWiresFinished()
         {
-            throw new NotImplementedException();
+            string result = "\n";
+            int i = 0;
+            foreach (string wire in wires)
+            {
+                result += (i + 1) + " " + wire + WireStateToString(i);
+                if (i == triggerWire)
+                {
+                    if (GameIsWon())
+                    {
+                        result += " (TRIGGER WIRE)";
+                    }
+
+
+                }
+
+
+                result += "\n";
+                i++;
+            }
+
+            return result;
         }
+
+
 
     }
         

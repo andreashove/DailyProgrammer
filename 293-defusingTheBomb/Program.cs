@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             IController ctr = new Controller();
-            ctr.Start();
+            //ctr.Start();
         }
     }
 }
