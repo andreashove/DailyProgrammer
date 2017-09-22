@@ -6,7 +6,6 @@
         string GetWiresFinished();
         string CutWire(int i);
         void InitializeWires();
-        void UpdateDifficultySetting(bool diff);
         bool GameIsWon();
     }
 }

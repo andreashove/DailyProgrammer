@@ -5,7 +5,9 @@ namespace _293_defusingTheBomb
 {
     class View : IView
     {
-        string initUserPrompt =
+        const int EXPLOSION = 0;
+        const int DISARM = 1;
+        string header =
         @" 
           ____        __               _____ _          ____                  _     
          |  _ \  ___ / _|_   _ ___  __|_   _| |__   ___| __ )  ___  _ __ ___ | |__  
@@ -33,50 +35,28 @@ namespace _293_defusingTheBomb
                                                 
         ";
 
+        string rules =
 
-        const int RULES = 0;
-        const int WHICH_WIRE_TO_CUT = 1;
-        /*
-        @"If you cut a:  
-                - white cable you can't cut (white) or black cable.
-                - red cable you have to cut a green one.
-                - black cable it is not allowed to cut a white, green or orange one.
-                - orange cable you should cut a red or black one.     
-                - green cable you have to cut a orange or white one.
-                - purple cable you can't cut a (purple), green, orange or white cable",
-        */
-        List<string> userPrompts;
+        @"
+        +---------+------------------------+-----------------+
+        | If  cut |       Can't cut        |    Must cut     |
+        +---------+------------------------+-----------------+
+        | white   | black                  |                 |
+        | red     |                        | green           |
+        | black   | white, green or orange |                 |
+        | orange  |                        | red or black    |
+        | green   |                        | orange or white |
+        | purple  | green, orange or white |                 |
+        +---------+------------------------+-----------------+
+        "
+        ;
+
 
         public View()
         {
-            userPrompts = new List<string>()
-            {
-                @"
-                +---------+------------------------+-----------------+
-                | If  cut |       Can't cut        |    Must cut     |
-                +---------+------------------------+-----------------+
-                | white   | black                  |                 |
-                | red     |                        | green           |
-                | black   | white, green or orange |                 |
-                | orange  |                        | red or black    |
-                | green   |                        | orange or white |
-                | purple  | green, orange or white |                 |
-                +---------+------------------------+-----------------+
-",
-
-                
-                "Bomb go boom, unless you cut the correct wires.",
-                "Which wire would you like to cut?",
-                "\n\n\n************************\n********       *********\n******** BOOM! *********\n********       *********\n************************\n\n\n",
-                "\n\n\n************************\n********       *********\n******* VICTORY! *******\n********       *********\n************************\n\n\n"
-
-
-            };
-
             
-            
-        
         }
+
         public void ClearConsole()
         {
             Console.Clear();
@@ -84,27 +64,21 @@ namespace _293_defusingTheBomb
         public void WriteHeaderAndRulesToUser()
         {
             ClearConsole();
-            Console.WriteLine(initUserPrompt);
-            Console.WriteLine(userPrompts[RULES]);
+            Console.WriteLine(header);
+            Console.WriteLine(rules);
         }
 
        
         public void WriteToUser(string str)
         {
-
-            if (String.IsNullOrEmpty(str))
-                Console.WriteLine(userPrompts[WHICH_WIRE_TO_CUT]);
-            else
-                Console.WriteLine(str);
-            
+            Console.WriteLine(str);
         }
 
         public void WriteToUser(int i)
         {
-            //ClearConsole();
-            if (i==3)
+            if (i==0)
                 Console.WriteLine(explosion);
-            if (i==4)
+            if (i==1)
                 Console.WriteLine(disarmed);
         }
 

@@ -5,16 +5,24 @@ namespace _293_defusingTheBomb
 {
     class Model : IModel
     {
-        const int BLOCKED = 9;
-        const int CUTTED = 5;
+        // Wire states
+        const int UNMODIFIED = 0;
+        const int CUT = 1;
+        const int BLOCKED = 4;
         const int REQUIRED = 2;
         const int REQUIRED_OR = 3;
 
+        // Wire colors
+        const int WHITE = 0;
+        const int BLACK = 1;
+        const int PURPLE = 2;
+        const int RED = 3;
+        const int GREEN = 4;
+        const int ORANGE = 5;
+
         private List<string> wires;
         private int[] wireState = { 0, 0, 0, 0, 0, 0 };
-        private string[] wireStateString = { "", "", " (REQUIRED)", " (ONE REQUIRED)", "", " (CUTTED)", "", "", "", " (BLOCKED)" };
-        //private string[] wireStateString = { "", "", "", "", "", " (CUTTED)", "", "", "", "" };
-
+        private string[] wireStateString = { "", " (CUT)", " (REQUIRED)", " (ONE REQUIRED)", " (BLOCKED)"};
 
         private int triggerWire;
         public int Triggerwire
@@ -26,22 +34,10 @@ namespace _293_defusingTheBomb
             
         }
 
-        private bool difficulty = false;
-
-        const int UNMODIFIED = 0;
-        const int WHITE = 0;
-        const int BLACK = 1;
-        const int PURPLE = 2;
-        const int RED = 3;
-        const int GREEN = 4;
-        const int ORANGE = 5;
 
         public Model()
         {
             InitializeWires();
-            
-
-
         }
 
         public void InitializeWires()
@@ -65,7 +61,7 @@ namespace _293_defusingTheBomb
 
         public string CutWire(int wire)
         {
-            if (WireIsCutted(wire))
+            if (WireIsCut(wire))
                 return "";
 
             if (WireIsBlocked(wire))
@@ -73,26 +69,17 @@ namespace _293_defusingTheBomb
 
             CheckIfWireWasRequired(wire);
 
-            
             if (wire == triggerWire)
                 return "boom";
 
             BlockWire(wire); // if should be blocked
-
-            
-
-            wireState[wire] = CUTTED;
-
-            //if (GameIsWon())
-             //   return "won";
-
+            wireState[wire] = CUT;
 
             return "";
         }
 
         private void CheckIfWireWasRequired(int wire)
         {
-            //int c = 0;
 
             if (wireState[WHITE] == REQUIRED_OR && wireState[ORANGE] == REQUIRED_OR)
             {
@@ -134,15 +121,14 @@ namespace _293_defusingTheBomb
 
         private void BlockWire(int wire)
         {
-            if (WireIsBlocked(wire) || WireIsCutted(wire))
+            if (WireIsBlocked(wire) || WireIsCut(wire))
                 return;
 
             
             switch (wire)
             {
                 case WHITE:
-                    wireState[BLACK] = wireState[BLACK] == UNMODIFIED ? BLOCKED : wireState[BLACK];
-                    //if (wireState[BLACK] == UNMODIFIED) wireState[BLACK] = BLOCKED;
+                    if (wireState[BLACK] == UNMODIFIED) wireState[BLACK] = BLOCKED;
                     break;
 
                 case BLACK:
@@ -162,7 +148,6 @@ namespace _293_defusingTheBomb
                         wireState[WHITE] = REQUIRED_OR;
                         wireState[ORANGE] = REQUIRED_OR;
                     }
-                        //if (wireState[ORANGE] == UNMODIFIED) wireState[ORANGE] = REQUIRED_OR;
                     break;
 
                 case ORANGE:
@@ -177,14 +162,6 @@ namespace _293_defusingTheBomb
                     throw new IndexOutOfRangeException();
                     
             };
-                
-
-            
-            
-        }
-        public void UpdateDifficultySetting(bool d)
-        {
-            difficulty = d;
         }
 
         private bool WireIsBlocked(int i)
@@ -192,15 +169,13 @@ namespace _293_defusingTheBomb
             return wireState[i].Equals(BLOCKED);
         }
 
-        private bool WireIsCutted(int i)
+        private bool WireIsCut(int i)
         {
-            return wireState[i].Equals(CUTTED);
+            return wireState[i].Equals(CUT);
         }
 
         private string WireStateToString(int i)
         {
-            
-
             return wireStateString[wireState[i]];
         }
 

@@ -46,12 +46,18 @@ namespace _293_defusingTheBomb
             
         }
 
+        public void StartThread(ManualResetEvent mre)
+        {
+            thread.Start(mre);
+        }
+
         public void StartThread()
         {
-            
+            thread = new Thread(new ThreadStart(PlayBeep));
+            thread.IsBackground = true;
             thread.Start();
         }
-        
+
         public void StopThread()
         {
             thread.Abort();
