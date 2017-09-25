@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Threading;
 using System.Timers;
 
@@ -16,7 +17,9 @@ namespace _293_defusingTheBomb
         private int EXPLOSION = 0;
         private int VICTORY = 1;
         const string EMPTY = "";
-        private bool shouldStart = true;
+        private bool roundFinished = false;
+        private bool shouldExplode = false;
+
 
         /*
          * Should have main thread pulling the userinput via View and have the timer run on a seperate thread.
@@ -29,70 +32,17 @@ namespace _293_defusingTheBomb
             view = new View();
             model = new Model();
             countdownTimer = new Countdown();
-            //threadUserInput = new QueryUser();
-
             soundEffects = new Sounds();
 
             countdownTimer.BombTimerRanOut += HandleTimerRanOut;
-            //threadUserInput.SendData += HandleReceivedUserData;
-
-            var waitHandles = new ManualResetEvent[2];
 
             while (true)
             {
 
-                WriteRulesAndWiresToUser();
-
-                if (shouldStart)
-                {
-                    shouldStart = false;
-                    Start();
-                }
-
-                var input = view.GetValidatedUserInput();
-                HandleUserInput(input);
+                Start();
+                
 
             }
-            
-
-   
-            
-
-
-            /*
-            for (int i = 0; i < 2; i++)
-            {
-                waitHandles[i] = new ManualResetEvent(false);
-
-                new Thread(waitHandle =>
-                {
-
-                    // TODO: Do some processing...
-
-                    // signal the corresponding wait handle
-                    // ideally wrap the processing in a try/finally
-                    // to ensure that the handle has been signaled
-                    (waitHandle as ManualResetEvent).Set();
-                }).Start(waitHandles[i]);
-            }
-
-            // wait for all handles to be signaled => this will block the main
-            // thread until all the handles have been signaled (calling .Set on them)
-            // which would indicate that the background threads have finished
-            // We also define a 30s timeout to avoid blocking forever
-            if (!WaitHandle.WaitAll(waitHandles, TimeSpan.FromSeconds(30)))
-            {
-                // timeout
-            }
-
-            if (!WaitHandle.WaitAll(waitHandles, TimeSpan.FromSeconds(30)))
-            {
-                Console.WriteLine("All handles closed");
-            }
-            */
-
-
-
         }
 
         private void StopCountdown()
@@ -110,6 +60,7 @@ namespace _293_defusingTheBomb
             if (wireCutResponse == "boom")
             {
                 countdownTimer.Interval = 100;
+                shouldExplode = true;
 
             }
 
@@ -118,56 +69,32 @@ namespace _293_defusingTheBomb
 
         private void HandleReceivedUserData(object sender, ReceivedDataEventArgs e)
         {
-            var wireToCut = e.UserInput;
-
-            var wireCutResponse = model.CutWire(wireToCut);
-            countdownTimer.Interval -= countdownTimer.Interval / 10;
-
-            if (wireCutResponse == "boom")
-            {
-                //view.ClearConsole();
-                view.WriteHeaderAndRulesToUser();
-                view.WriteToUser(model.GetWires());
-                Explode();
-                PlayAgain();
-                shouldStart = true;
-                StopCountdown();
-                StopReceivingInput();
-                //RoundFinished();
-                //Start();
-
-            }
-
-            WriteRulesAndWiresToUser();
+            throw new NotImplementedException();
         }
 
         private void RoundFinished()
         {
-            
+            ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
+            Console.WriteLine("før Coutn: " + currentThreads.Count);
+            Console.ReadLine();
+            StopCountdown();
 
-            
-            GameStartupFinished();
-            PlayAgain();
-
-
-
-            shouldStart = true;
-            //StopCountdown();
-            //StopReceivingInput();
-
-
-
-        }
-
-        private void StopReceivingInput()
-        {
-            threadUserInput.StopThread();
+            currentThreads = Process.GetCurrentProcess().Threads;
+            Console.WriteLine("etter Coutn: " + currentThreads.Count);
+            Console.ReadLine();
         }
 
         private void HandleTimerRanOut(object sender, EventArgs e)
         {
+            roundFinished = true;
+            PrintResults();
 
-            if (model.GameIsWon())
+            if (shouldExplode)
+            {
+                
+                Explode();
+            }
+            else if (model.GameIsWon())
             {
                 Disarm();
 
@@ -178,7 +105,14 @@ namespace _293_defusingTheBomb
 
             }
 
-            RoundFinished();
+            Stop();
+        }
+
+        private void PrintResults()
+        {
+            //view.ClearConsole();
+            WriteRulesAndWiresToUser();
+
         }
 
         private void Disarm()
@@ -190,36 +124,54 @@ namespace _293_defusingTheBomb
         private void Explode()
         {
             countdownTimer.Interval = 15;
+
             view.WriteToUser(EXPLOSION);
             soundEffects.PlayExplosion();
+            
+            
 
         }
        
         private void PlayAgain()
         {
+            
             view.WriteToUser("Play again?");
             view.GetUserInput();
         }
         public void Start()
         {
-            shouldStart = false;
+            roundFinished = false;
             model.InitializeWires();
-            WriteRulesAndWiresToUser();
+            
             countdownTimer.StartThread();
-            //threadUserInput.StartThread();
+            while (!roundFinished)
+            {
+                WriteRulesAndWiresToUser();
+                var input = view.GetValidatedUserInput();
+                HandleUserInput(input);
+            }
+            
+
+        }
+        public void Stop()
+        {
+            view.WriteToUser("Play again? (input int between 1 and 6 due to high code quality)");
+            shouldExplode = false;
+            roundFinished = true;
+            countdownTimer.StopThread();
 
         }
 
         private void WriteRulesAndWiresToUser()
         {
             view.WriteHeaderAndRulesToUser();
-            view.WriteToUser(model.GetWires());
+
+            if (roundFinished)
+                view.WriteToUser(model.GetWiresFinished());
+            else
+                view.WriteToUser(model.GetWires());
         }
-        private void GameStartupFinished()
-        {
-            view.WriteHeaderAndRulesToUser();
-            view.WriteToUser(model.GetWiresFinished());
-        }
+
 
     }
 }

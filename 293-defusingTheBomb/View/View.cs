@@ -95,7 +95,40 @@ namespace _293_defusingTheBomb
 
             while (!inputValid)
             {
-                input = Console.ReadLine();
+                var inp = Console.ReadKey().Key; 
+                switch (inp)
+                {
+                    case ConsoleKey.D1:
+                        input = "1";
+                        break;
+
+                    case ConsoleKey.D2:
+                        input = "2";
+                        break;
+
+                    case ConsoleKey.D3:
+                        input = "3";
+                        break;
+
+                    case ConsoleKey.D4:
+                        input = "4";
+                        break;
+
+                    case ConsoleKey.D5:
+                        input = "5";
+                        break;
+
+                    case ConsoleKey.D6:
+                        input = "6";
+                        break;
+
+                    default:
+                        input = "-1";
+                        break;
+
+
+                }
+                //input = Console.ReadLine();
 
                 try
                 {

@@ -53,6 +53,7 @@ namespace _293_defusingTheBomb
 
         public void StartThread()
         {
+            interval = 500;
             thread = new Thread(new ThreadStart(PlayBeep));
             thread.IsBackground = true;
             thread.Start();

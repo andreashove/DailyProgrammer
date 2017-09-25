@@ -207,10 +207,10 @@ namespace _293_defusingTheBomb
                 result += (i + 1) + " " + wire + WireStateToString(i);
                 if (i == triggerWire)
                 {
-                    if (GameIsWon())
-                    {
+                    
+                    
                         result += " (TRIGGER WIRE)";
-                    }
+                    
 
 
                 }
