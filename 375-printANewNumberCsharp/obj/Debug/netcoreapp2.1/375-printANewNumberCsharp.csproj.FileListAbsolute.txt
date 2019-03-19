@@ -1,0 +1,11 @@
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\bin\Debug\netcoreapp2.1\375-printANewNumberCsharp.deps.json
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\bin\Debug\netcoreapp2.1\375-printANewNumberCsharp.runtimeconfig.json
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\bin\Debug\netcoreapp2.1\375-printANewNumberCsharp.runtimeconfig.dev.json
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\bin\Debug\netcoreapp2.1\375-printANewNumberCsharp.dll
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\bin\Debug\netcoreapp2.1\375-printANewNumberCsharp.pdb
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\obj\Debug\netcoreapp2.1\375-printANewNumberCsharp.csproj.CoreCompileInputs.cache
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\obj\Debug\netcoreapp2.1\375-printANewNumberCsharp.AssemblyInfoInputs.cache
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\obj\Debug\netcoreapp2.1\375-printANewNumberCsharp.AssemblyInfo.cs
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\obj\Debug\netcoreapp2.1\375-printANewNumberCsharp.dll
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\obj\Debug\netcoreapp2.1\375-printANewNumberCsharp.pdb
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\375-printANewNumberCsharp\obj\Debug\netcoreapp2.1\375-printANewNumberCsharp.csprojAssemblyReference.cache

@@ -7,3 +7,12 @@ C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\2
 C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\293-defusingTheBomb.csprojResolveAssemblyReference.cache
 C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\explosion.wav
 C:\Users\anhove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\disarmed.wav
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\disarmed.wav
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\explosion.wav
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\293-defusingTheBomb.exe.config
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\293-defusingTheBomb.exe
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\bin\Debug\293-defusingTheBomb.pdb
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\293-defusingTheBomb.csprojAssemblyReference.cache
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\293-defusingTheBomb.csproj.CoreCompileInputs.cache
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\293-defusingTheBomb.exe
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\293-defusingTheBomb\obj\Debug\293-defusingTheBomb.pdb
