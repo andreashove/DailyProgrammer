@@ -1,0 +1,10 @@
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\bin\Debug\netcoreapp2.1\372-perfectlyBalanced.deps.json
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\bin\Debug\netcoreapp2.1\372-perfectlyBalanced.runtimeconfig.json
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\bin\Debug\netcoreapp2.1\372-perfectlyBalanced.runtimeconfig.dev.json
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\bin\Debug\netcoreapp2.1\372-perfectlyBalanced.dll
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\bin\Debug\netcoreapp2.1\372-perfectlyBalanced.pdb
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\obj\Debug\netcoreapp2.1\372-perfectlyBalanced.csproj.CoreCompileInputs.cache
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\obj\Debug\netcoreapp2.1\372-perfectlyBalanced.AssemblyInfoInputs.cache
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\obj\Debug\netcoreapp2.1\372-perfectlyBalanced.AssemblyInfo.cs
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\obj\Debug\netcoreapp2.1\372-perfectlyBalanced.dll
+C:\Users\AndreasHove\Documents\GitHub\DailyProgrammer\372-perfectlyBalanced\obj\Debug\netcoreapp2.1\372-perfectlyBalanced.pdb
